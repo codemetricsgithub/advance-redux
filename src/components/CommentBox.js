@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+import  requireAuth  from "./requireAuth";
 
 class CommentBox extends Component {
   state = { comment: "" };
@@ -25,10 +26,12 @@ class CommentBox extends Component {
             <button> Submit Comment</button>
           </div>
         </form>
-        <button className="fetch_comment_btn" onClick={this.props.fetchComment}> fetch Comment</button>
+        <button className="fetch_comment_btn" onClick={this.props.fetchComment}>
+          fetch Comment
+        </button>
       </div>
     );
   }
 }
 
-export default connect(null, actions)(CommentBox);
+export default connect(null, actions)(requireAuth(CommentBox));

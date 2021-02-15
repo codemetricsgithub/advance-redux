@@ -10,6 +10,7 @@ export class CommentList extends Component {
   render() {
     return (
       <div>
+        <h3> Comment List</h3>
         <ul>{this.renderComments()}</ul>
       </div>
     );

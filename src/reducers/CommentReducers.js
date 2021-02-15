@@ -6,10 +6,10 @@ export default function (state = [], action) {
       return [...state, action.payload];
 
     case FETCH_COMMENTS:
-      const commentsDataHolds = action.payload.data.map(
-        (TakeDataFromServer) => TakeDataFromServer.email
+      const tempDataHolds = action.payload.data.map(
+        (TakeDataFromServer) => TakeDataFromServer.joinedDate
       );
-      return [...state, ...commentsDataHolds];
+      return [...state, ...tempDataHolds];
     default:
       return state;
   }
