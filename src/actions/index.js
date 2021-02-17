@@ -8,7 +8,7 @@ export function saveComment(comment) {
   };
 }
 export function fetchComment() {
-  const response = axios.get("https://ak-api-nodejs.herokuapp.com/api/getuser");
+  const response = axios.get("https://jsonplaceholder.typicode.com/comments");
   return {
     type: FETCH_COMMENTS,
     payload: response,
